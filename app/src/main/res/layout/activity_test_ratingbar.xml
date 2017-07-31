@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:a_zhon="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test_ratingbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.ruanmeng.myrefreshandratingbar.ratingbar.TestRatingbar">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="自定义的一个评分控件(自适应属性):"
+        android:textSize="16sp"/>
+
+    <com.ruanmeng.myrefreshandratingbar.ratingbar.MyRatingBar
+
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        a_zhon:clickable="true"
+        a_zhon:image_height="25dp"
+        a_zhon:image_padding="20dp"
+        a_zhon:image_width="25dp"
+        a_zhon:star="2"
+        a_zhon:star_count="5"
+        a_zhon:star_img="@mipmap/chengxindu2x"
+        a_zhon:unstar_img="@mipmap/chengxindu_12x"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+
+        android:layout_marginTop="30dp"
+        android:text="自定义的一个评分控件: (全屏属性)"
+        android:textSize="16sp"/>
+
+    <com.ruanmeng.myrefreshandratingbar.ratingbar.MyRatingBar
+        android:id="@+id/ratingbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        a_zhon:clickable="true"
+        a_zhon:image_height="25dp"
+        a_zhon:image_padding="20dp"
+        a_zhon:image_width="25dp"
+        a_zhon:ismuchparent="true"
+        a_zhon:star="2"
+        a_zhon:star_count="5"
+        a_zhon:star_img="@mipmap/chengxindu2x"
+        a_zhon:unstar_img="@mipmap/chengxindu_12x"/>
+
+</LinearLayout>
