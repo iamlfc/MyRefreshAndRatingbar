@@ -5,7 +5,7 @@
 效果如下：
 评分控件:
 
-![image](https://github.com/iamlfc/MyRefreshAndRatingbar/blob/master/app/src/main/assets/ratingbar.gif)   
+![image](https://github.com/iamlfc/MyRefreshAndRatingbar/blob/master/app/src/main/assets/GIF.gif)   
 刷新布局:
 
 ![image](https://github.com/iamlfc/MyRefreshAndRatingbar/blob/master/app/src/main/assets/shuaxin.gif)  
