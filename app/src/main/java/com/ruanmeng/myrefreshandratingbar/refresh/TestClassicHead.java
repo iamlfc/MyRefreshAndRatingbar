@@ -62,10 +62,12 @@ public class TestClassicHead extends AppCompatActivity {
 
         //设置 Header 为 Material风格
         classicsHeader = new ClassicsHeader(this);
+//        classicsHeader.setSpinnerStyle(SpinnerStyle.FixedBehind);  // 设置为 底层显示
 //        baseHeader = new BaseHeader(this);
         refreshLayout.setRefreshHeader(classicsHeader);
 //设置 Footer 为 球脉冲
         classicsFooter = new ClassicsFooter(this);
+//        classicsFooter.setSpinnerStyle(SpinnerStyle.FixedBehind);
         refreshLayout.setRefreshFooter(classicsFooter);
 
 
