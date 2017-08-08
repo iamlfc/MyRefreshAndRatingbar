@@ -16,34 +16,69 @@
         app:srlEnablePreviewInEditMode="false"
         >
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
+
+            android:fitsSystemWindows="true"
             >
 
-            <ImageView
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_gravity="top"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/img_01"/>
+                android:layout_height="wrap_content">
+
+                <!--  app:contentScrim="#8ee5ee"  设置 切换颜色 -->
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#987545"
+                        android:gravity="center"
+                        android:paddingBottom="50dp"
+                        android:paddingTop="50dp"
+                        android:text="banner区域"
+                        android:textColor="#ffffff"/>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+                    android:gravity="center"
+
+                    android:text="悬浮的部分---帅不帅！"/>
+
+            </android.support.design.widget.AppBarLayout>
+
 
             <android.support.v4.widget.NestedScrollView
+                android:id="@+id/lay_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
-               >
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                >
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rlv_my"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </android.support.v7.widget.RecyclerView>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rlv_my"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+
             </android.support.v4.widget.NestedScrollView>
-
-
-        </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

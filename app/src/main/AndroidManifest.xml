@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".refresh.TextBaseBeatyHead">
         </activity>
+        <activity android:name=".refresh.TestSuspend">
+        </activity>
     </application>
 
 </manifest>

@@ -1,9 +1,10 @@
 package com.ruanmeng.myrefreshandratingbar.refresh;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
@@ -26,7 +27,7 @@ import java.util.List;
 /**
  * 经典样式的动画
  */
-public class TestClassicHead extends AppCompatActivity {
+public class TestClassicHead extends Activity {
 
     private LinearLayout activityTestBeatyHead;
     private SmartRefreshLayout refreshLayout;
@@ -36,15 +37,20 @@ public class TestClassicHead extends AppCompatActivity {
 
     ClassicsHeader classicsHeader = null;  // 设置在base中 的 经典动画
     BaseHeader baseHeader = null;  // 设置在 base 中的   帧动画
+    private NestedScrollView layScroll;
+
     ClassicsFooter classicsFooter = null;
     boolean issuccess = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_test_classic_head);
         initView();
     }
+
 
     private void initView() {
         activityTestBeatyHead = (LinearLayout) findViewById(R.id.activity_test_beaty_head);
@@ -69,6 +75,11 @@ public class TestClassicHead extends AppCompatActivity {
         classicsFooter = new ClassicsFooter(this);
 //        classicsFooter.setSpinnerStyle(SpinnerStyle.FixedBehind);
         refreshLayout.setRefreshFooter(classicsFooter);
+
+        // TODO: 2017/8/8  补救方法 设置 刷新背景色 和 主色调一直  避免出现 顶部的 横条
+        // 第一个 是 头的 背景刷新 颜色  第二个参数是  字体的颜色
+//        refreshLayout.setPrimaryColorsId(R.color.colorPrimaryDark, android.R.color.white);
+//        refreshLayout.getLayout().setBackgroundResource(R.color.mPrimary); //这个应该是 底部刷新的 颜色
 
 
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -100,6 +111,8 @@ public class TestClassicHead extends AppCompatActivity {
                     public void run() {
                         mlist_data.add("社会王" + index);
                         mlist_data.add("奥特曼" + index);
+                        mlist_data.add("加特林" + index);
+                        mlist_data.add("印度三哥" + index);
                         adapter.notifyItemRangeInserted(mlist_data.size() - 2, mlist_data.size());
                         adapter.notifyDataSetChanged();
 //                        refreshlayout.finishLoadmore();
@@ -112,6 +125,13 @@ public class TestClassicHead extends AppCompatActivity {
             }
         });
 
+
+        layScroll = (NestedScrollView) findViewById(R.id.lay_scroll);
+        layScroll.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+            }
+        });
     }
 
     int index = 0;

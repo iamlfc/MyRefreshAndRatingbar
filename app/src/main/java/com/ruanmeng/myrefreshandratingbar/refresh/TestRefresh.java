@@ -15,6 +15,7 @@ public class TestRefresh extends AppCompatActivity {
     private Button btnHead01;
     private Button btnHead02;
     private Button btnHead03;
+    private Button btnHead04;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,14 @@ public class TestRefresh extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TestRefresh.this, TestBeatyHead.class));
+
+            }
+        });
+        btnHead04 = (Button) findViewById(R.id.btn_head04);
+        btnHead04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TestRefresh.this, TestSuspend.class));
 
             }
         });
