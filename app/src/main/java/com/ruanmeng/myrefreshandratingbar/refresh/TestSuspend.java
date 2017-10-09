@@ -1,6 +1,7 @@
 package com.ruanmeng.myrefreshandratingbar.refresh;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.ruanmeng.myrefreshandratingbar.R;
 import com.ruanmeng.myrefreshandratingbar.adapter.BaseRecyclerAdapter;
 import com.ruanmeng.myrefreshandratingbar.adapter.RecyclerViewHolder;
 import com.ruanmeng.myrefreshandratingbar.adapter.WrapContentLinearLayoutManager;
+import com.ruanmeng.myrefreshandratingbar.toolbar.MyTestToolbar;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
@@ -93,6 +95,13 @@ public class TestSuspend extends AppCompatActivity {
         protected void bindData(RecyclerViewHolder holder, int position, String item) {
 
             holder.setText(R.id.tv_item, item);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    startActivity(new Intent(TestSuspend.this, MyTestToolbar.class));
+                }
+            });
         }
     }
 }

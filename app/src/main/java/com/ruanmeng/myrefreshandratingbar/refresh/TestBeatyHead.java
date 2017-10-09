@@ -41,7 +41,7 @@ public class TestBeatyHead extends AppCompatActivity {
         setContentView(R.layout.activity_test_beaty_head);
         initView();
     }
-
+    
     private void initView() {
 //        activityMyTestRefresh = (LinearLayout) findViewById(R.id.activity_my_test_refresh);
         refreshLayout = (SmartRefreshLayout) findViewById(R.id.refreshLayout);
